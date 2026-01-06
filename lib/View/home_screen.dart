@@ -135,7 +135,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Car Number Plate Scanner")),
       body: _isCameraLoading
           ? const Center(child: CircularProgressIndicator())
           : Column(
@@ -161,10 +160,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             plateRect: _plateRect!,
                             imageSize: _imageSize!,
                             previewSize: Size(
-                              _cameraController!
-                                  .value.previewSize!.height,
-                              _cameraController!
-                                  .value.previewSize!.width,
+                              _cameraController!.value.previewSize!.height,
+                              _cameraController!.value.previewSize!.width,
                             ),
                           ),
                         ),

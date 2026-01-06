@@ -135,7 +135,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Car Number Plate Scanner")),
       body: _isCameraLoading
           ? const Center(child: CircularProgressIndicator())
           : Column(
@@ -146,8 +145,8 @@ class _HomeScreenState extends State<HomeScreen> {
           if (_cameraController != null)
             Center(
               child: SizedBox(
-                height: 300, // 👈 SET YOUR HEIGHT
-                width: 350,  // 👈 SET YOUR WIDTH
+                height: 350, // 👈 SET YOUR HEIGHT
+                width: 450,  // 👈 SET YOUR WIDTH
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(16),
                   child: Stack(
@@ -161,10 +160,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             plateRect: _plateRect!,
                             imageSize: _imageSize!,
                             previewSize: Size(
-                              _cameraController!
-                                  .value.previewSize!.height,
-                              _cameraController!
-                                  .value.previewSize!.width,
+                              _cameraController!.value.previewSize!.height,
+                              _cameraController!.value.previewSize!.width,
                             ),
                           ),
                         ),
@@ -180,7 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Text(
             _vehicleNumber,
             style: const TextStyle(
-                fontSize: 22, fontWeight: FontWeight.bold),
+                fontSize: 25, fontWeight: FontWeight.bold),
           ),
 
           const SizedBox(height: 16),
@@ -190,7 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: _isProcessing
                 ? const CircularProgressIndicator(
                 color: Colors.white)
-                : const Text("Scan Number Plate"),
+                : const Text("Scan Number Plates"),
           ),
         ],
       ),

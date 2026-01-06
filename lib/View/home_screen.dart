@@ -139,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ? const Center(child: CircularProgressIndicator())
           : Column(
         children: [
-          const SizedBox(height: 12),
+          const SizedBox(height: 15),
 
           /// 📷 Camera + Bounding Box
           if (_cameraController != null)
